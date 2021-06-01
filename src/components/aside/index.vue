@@ -2,11 +2,11 @@
  * @Description: 侧边栏
  * @Date: 2021-06-01 15:03:58 +0800
  * @Author: JackChou
- * @LastEditTime: 2021-06-01 19:28:52 +0800
+ * @LastEditTime: 2021-06-02 02:03:42 +0800
  * @LastEditors: JackChou
 -->
 <template>
-  <div>
+  <div class="aside-container">
     <!-- router 属性开启以 index 为路径的跳转 -->
     <el-menu
       default-active="/"
@@ -117,8 +117,17 @@ export default {
   },
 }
 </script>
-<style scoped>
-.el-menu {
-  border: none;
+<style lang="less">
+.aside-container {
+  min-height: 100vh;
+  ul:first-child {
+    min-height: 100vh;
+  }
+  ul {
+    background-color: #ecedf1;
+  }
+  .el-menu {
+    border: none;
+  }
 }
 </style>

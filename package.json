@@ -8,8 +8,10 @@
     "lint": "vue-cli-service lint"
   },
   "lint-staged": {
-    "*.{html,vue,css,scss}": [
-      "prettier --write",
+    "*.{js,jsx,html,vue,css,scss}": [
+      "prettier --write"
+    ],
+    "*.{js,jsx,vue}": [
       "eslint --fix"
     ]
   },

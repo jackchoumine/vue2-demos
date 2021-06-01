@@ -2,15 +2,17 @@
  * @Description: 应用入口
  * @Date: 2021-06-01 10:07:44 +0800
  * @Author: JackChou
- * @LastEditTime: 2021-06-01 19:28:18 +0800
+ * @LastEditTime: 2021-06-02 01:17:03 +0800
  * @LastEditors: JackChou
  */
 import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router'
+import './assets/style/reset.css'
+import 'element-ui/lib/theme-chalk/index.css'
+
 import elComponents from './element-ui'
 import globalComponents from './components'
-import 'element-ui/lib/theme-chalk/index.css'
 import router from './route'
 
 const plugins = [VueRouter, globalComponents]

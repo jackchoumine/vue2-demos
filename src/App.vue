@@ -10,9 +10,8 @@ export default {
   components: {},
 }
 </script>
-
-<style scoped lang="less">
+<style lang="less">
 .app {
-  height: 100%;
+  min-height: 100vh;
 }
 </style>
