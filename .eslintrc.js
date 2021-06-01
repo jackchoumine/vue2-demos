@@ -28,7 +28,7 @@ module.exports = {
     'no-undefined': 2,
     // 禁止出现未使用过的变量
     // NOTE 不要全局关闭，在文件内和当前行关闭该规则的检查: cmd + .
-    'no-unused-vars': [2, { vars: 'all', args: 'none' }],
+    'no-unused-vars': [1, { vars: 'all', args: 'none' }],
     // 要求使用 const 声明那些声明后不再被修改的变量
     'no-var': 2,
     'prefer-const': 2,
