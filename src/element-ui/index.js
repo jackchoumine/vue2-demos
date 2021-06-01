@@ -2,9 +2,10 @@
  * @Description: 按需引入element-ui
  * @Date: 2021-06-01 15:10:03 +0800
  * @Author: JackChou
- * @LastEditTime: 2021-06-02 00:24:00 +0800
+ * @LastEditTime: 2021-06-02 02:16:31 +0800
  * @LastEditors: JackChou
  */
+import 'element-ui/lib/theme-chalk/index.css'
 // import { Button } from 'element-ui'
 import {
   // 表单
@@ -134,7 +135,19 @@ const formComponents = [
 //   Tree,
 //   Tag,
 // ]
-const layoutComponents = [Container, Footer, Main, Header, Breadcrumb, BreadcrumbItem, Card, Tree, Tabs, TabPane, Aside]
+const layoutComponents = [
+  Container,
+  Footer,
+  Main,
+  Header,
+  Breadcrumb,
+  BreadcrumbItem,
+  Card,
+  Tree,
+  Tabs,
+  TabPane,
+  Aside,
+]
 // const noticeComponents = [Dialog, MessageBox, Message, Alert, Loading, Notification]
 
 // const menuComponents = [Menu, Submenu, MenuItem, MenuItemGroup]
