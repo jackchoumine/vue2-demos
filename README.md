@@ -30,6 +30,14 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## 学习记录
 
+> 运行环境
+
+```js
+node v14.15.4
+npm v6.14
+vue-cli 4.5.11
+```
+
 ### vue.config.js 配置
 
 1. 提供参数提示
