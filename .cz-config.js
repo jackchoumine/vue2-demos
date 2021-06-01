@@ -1,3 +1,10 @@
+/*
+ * @Description: git 提交信息配置
+ * @Date: 2021-06-01 13:51:23 +0800
+ * @Author: JackChou
+ * @LastEditTime: 2021-06-01 14:57:45 +0800
+ * @LastEditors: JackChou
+ */
 module.exports = {
   types: [
     { value: 'feat', name: 'feat:     新功能' },
@@ -26,7 +33,7 @@ module.exports = {
   },
   allowCustomScopes: true,
   // allowBreakingChanges: ['feat', 'fix'],
-  skipQuestions: ['body', 'footer'],
+  skipQuestions: ['scope', 'body', 'footer'],
   // limit subject length, commitlint默认是72
   subjectLimit: 72,
 }

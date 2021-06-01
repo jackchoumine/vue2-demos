@@ -2,7 +2,7 @@
  * @Description: git 提交规范
  * @Date: 2021-05-16 22:09:22 +0800
  * @Author: JackChou
- * @LastEditTime: 2021-05-16 23:53:54 +0800
+ * @LastEditTime: 2021-06-01 14:55:11 +0800
  * @LastEditors: JackChou
  */
 // commitlint
@@ -19,7 +19,7 @@ module.exports = {
       [
         'feat', // 新功能 feature
         'fix', // 修复 bug
-        'merge', //合并分支
+        'merge', // 合并分支
         'docs', // 文档注释
         'style', // 代码格式(不影响代码运行的变动)
         'refactor', // 重构(既不增加新功能，也不是修复bug)
