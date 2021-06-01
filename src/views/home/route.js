@@ -2,7 +2,7 @@
  * @Description: home页路由
  * @Date: 2021-06-01 14:50:13 +0800
  * @Author: JackChou
- * @LastEditTime: 2021-06-01 14:52:11 +0800
+ * @LastEditTime: 2021-06-02 00:24:36 +0800
  * @LastEditors: JackChou
  */
 const homeRoutes = [

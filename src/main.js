@@ -9,10 +9,11 @@ import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router'
 import elComponents from './element-ui'
+import globalComponents from './components'
 import 'element-ui/lib/theme-chalk/index.css'
 import router from './route'
 
-const plugins = [VueRouter]
+const plugins = [VueRouter, globalComponents]
 // 注入 element-ui 组件
 Vue.use(elComponents)
 

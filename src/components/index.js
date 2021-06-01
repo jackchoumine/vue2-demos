@@ -5,9 +5,8 @@
  * @LastEditTime: 2021-06-01 15:13:47 +0800
  * @LastEditors: JackChou
  */
-import { Button } from 'element-ui'
-
-const components = [Button]
+import Aside from './aside'
+const components = [Aside]
 const elComponents = {
   install(Vue) {
     try {
