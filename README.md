@@ -103,3 +103,16 @@ configureWebpack: {
 [vue.config.js 配置路径别名等](https://blog.csdn.net/zhangyizuishuai/article/details/109537305)
 
 [vue-cli4 全面配置(持续更新)](https://staven630.github.io/vue-cli4-config/)
+
+3. 配置 less
+
+感觉 scss 的语法更加接近 css，更喜欢用 scss,奈何配置一直不成功，只能转到 less 了。
+
+```bash
+"less": "^4.1.1",
+"less-loader": "^5.0.0",
+```
+
+> less-loader 版本过高，可能报错：`TypeError: this.getOptions is not a function`，降低版本试试。最后降到`5.0.0`，可行。
+
+其他 less 配置，后续再配置。

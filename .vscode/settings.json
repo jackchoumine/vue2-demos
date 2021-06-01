@@ -1,4 +1,8 @@
 {
+  // 这些文件将不会显示在工作空间中
+  "files.exclude": {
+    "**/node_modules": false
+  },
   "cSpell.words": [
     "Cascader",
     "mixins"
