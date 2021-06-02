@@ -2,7 +2,7 @@
  * @Description: 应用入口
  * @Date: 2021-06-01 10:07:44 +0800
  * @Author: JackChou
- * @LastEditTime: 2021-06-02 02:16:24 +0800
+ * @LastEditTime: 2021-06-02 15:20:05 +0800
  * @LastEditors: JackChou
  */
 import Vue from 'vue'
@@ -11,9 +11,10 @@ import VueRouter from 'vue-router'
 import './assets/style/reset.css'
 import elComponents from './element-ui'
 import globalComponents from './components'
+import myComponents from './examples'
 import router from './route'
 
-const plugins = [VueRouter, globalComponents]
+const plugins = [VueRouter, globalComponents, myComponents]
 // 注入 element-ui 组件
 Vue.use(elComponents)
 
