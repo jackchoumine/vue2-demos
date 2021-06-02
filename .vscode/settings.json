@@ -3,6 +3,13 @@
   "files.exclude": {
     "**/node_modules": false
   },
+  "search.exclude": {
+    "**/node_modules": false,
+    "**/bower_components": true,
+    "**/target": true,
+    "**/logs": true,
+    "**/dist": true,
+  },
   "cSpell.words": [
     "Cascader",
     "mixins",
