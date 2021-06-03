@@ -1,0 +1,6 @@
+{
+  "MyButton": {
+    "attributes": ["type", "content", "color"],
+    "description": "自定义按钮组件"
+  }
+}

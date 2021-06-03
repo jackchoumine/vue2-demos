@@ -1,0 +1,10 @@
+{
+  "type": {
+    "type": "string",
+    "description": "element-ui 的 按钮 type"
+  },
+  "content": {
+    "type": "string",
+    "description": "文本内容"
+  }
+}

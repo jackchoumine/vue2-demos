@@ -1,6 +1,10 @@
 {
   "name": "vue2-demos",
   "version": "0.1.0",
+  "vetur": {
+    "tags": "./vetur/tags.json",
+    "attributes": "./vetur/attributes.json"
+  },
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",

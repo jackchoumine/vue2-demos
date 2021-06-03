@@ -2,13 +2,14 @@
  * @Description: 动态创建组件
  * @Date: 2021-06-02 12:56:00 +0800
  * @Author: JackChou
- * @LastEditTime: 2021-06-03 15:46:03 +0800
+ * @LastEditTime: 2021-06-04 01:01:01 +0800
  * @LastEditors: JackChou
 -->
 <template>
   <div>
     <h2>动态创建组件</h2>
     <el-button type="primary" @click="createButton">点击创建</el-button>
+    <MyButton type="success" />
     <div ref="container"></div>
   </div>
 </template>
@@ -18,6 +19,7 @@ import Vue from 'vue'
 import MyButton from './MyButton'
 export default {
   name: 'DynamicComponent',
+  components: { MyButton },
   methods: {
     createButton() {
       // https://www.zhihu.com/column/p/374400464
