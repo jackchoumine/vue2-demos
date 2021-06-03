@@ -3,7 +3,7 @@
  * @Hash: /
  * @Date: 2021-06-01 14:17:03 +0800
  * @Author: JackChou
- * @LastEditTime: 2021-06-02 01:55:53 +0800
+ * @LastEditTime: 2021-06-03 21:20:58 +0800
  * @LastEditors: JackChou
 -->
 <template>
@@ -33,7 +33,7 @@ export default {
   height: 100%;
   display: flex;
   .right {
-    min-width: 100%;
+    min-width: calc(100% - 150px);
     .el-header {
       background-color: #ecedf1;
     }
