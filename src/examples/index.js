@@ -2,14 +2,16 @@
  * @Description: 导出学习例子
  * @Date: 2021-06-02 12:55:29 +0800
  * @Author: JackChou
- * @LastEditTime: 2021-06-02 15:04:45 +0800
+ * @LastEditTime: 2021-06-03 15:42:50 +0800
  * @LastEditors: JackChou
  */
 import dynamicComponent from './dynamic-component'
+import confirm from './confirm'
 const components = [dynamicComponent]
 
 const myComponents = {
   install(Vue) {
+    Vue.prototype.$myConfirm = confirm
     try {
       components.forEach(component => {
         if (!component.name) {
