@@ -2,7 +2,7 @@
  * @Description: 击鼓传花
  * @Date: 2021-06-05 03:08:28 +0800
  * @Author: JackChou
- * @LastEditTime: 2021-06-05 04:11:30 +0800
+ * @LastEditTime: 2021-06-05 04:20:55 +0800
  * @LastEditors: JackChou
  */
 import { Queue } from '../index'
@@ -21,6 +21,7 @@ export const passFlower = ({ nameList = [], number = 0 } = {}) => {
     return queue.front()
   }
   // 数数，数到 number，出列，否则入列，直到只剩下一个元素
+  // (nameList.length - 1) * (number - 1)
   while (queue.size() >= 2) {
     Array.from({ length: number - 1 }).forEach(_ => {
       queue.enqueue(queue.dequeue())
