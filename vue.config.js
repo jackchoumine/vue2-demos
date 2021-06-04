@@ -1,3 +1,10 @@
+/*
+ * @Description vue 项目配置
+ * @Date: 2021-06-01 11:30:40 +0800
+ * @Author: JackChou
+ * @LastEditTime: 2021-06-04 20:55:21 +0800
+ * @LastEditors: JackChou
+ */
 /**
  * @typedef { import("@vue/cli-service").ProjectOptions } Options
  */
@@ -9,12 +16,9 @@ module.exports = {
     config.resolve.alias
       .set('@', resolve('src/'))
       .set('@com', resolve('src/components'))
+      .set('@ex', resolve('src/examples'))
       .set('views', resolve('src/views'))
-    config.resolve.extensions
-      .add('.js')
-      .add('.jsx')
-      .add('.vue')
-      .add('.json')
+    config.resolve.extensions.add('.js').add('.jsx').add('.vue').add('.json')
   },
 }
 

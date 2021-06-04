@@ -2,7 +2,7 @@
  * @Description: babel 配置
  * @Date: 2021-06-01 10:07:44 +0800
  * @Author: JackChou
- * @LastEditTime: 2021-06-01 15:06:31 +0800
+ * @LastEditTime: 2021-06-04 21:50:26 +0800
  * @LastEditors: JackChou
  */
 module.exports = {
