@@ -5,7 +5,7 @@
  * @LastEditTime: 2021-06-04 22:34:00 +0800
  * @LastEditors: JackChou
  */
-const path = require('path')
+// const path = require('path')
 module.exports = {
   preset: '@vue/cli-plugin-unit-jest',
   moduleFileExtensions: [
