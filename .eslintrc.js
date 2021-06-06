@@ -14,6 +14,7 @@ module.exports = {
     'comma-dangle': [2, 'always-multiline'],
     'space-before-function-paren': [2, 'never'],
     quotes: [2, 'single', { allowTemplateLiterals: true }],
+    'no-void': 0,
     semi: [2, 'never'],
     'no-new': 2, // 禁用 new 创建对象而不赋值给变量
     // 强制在关键字前后使用一致的空格 (前后腰需要)
