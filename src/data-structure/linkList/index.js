@@ -2,7 +2,7 @@
  * @Description: 链表
  * @Date: 2021-06-06 17:45:18 +0800
  * @Author: JackChou
- * @LastEditTime: 2021-06-06 22:26:48 +0800
+ * @LastEditTime: 2021-06-06 22:33:32 +0800
  * @LastEditors: JackChou
  */
 /**
@@ -92,15 +92,7 @@ export const LinkList = class {
    * @param {any} element 移出某个数据
    */
   remove(element) {
-    if (this.length === 0) return false
-    if (this.indexOf(element) === -1) return false
     return this.removeAt(this.indexOf(element))
-  }
-
-  clear() {
-    this.head = null
-    this.length = 0
-    return false
   }
 
   /**
@@ -129,6 +121,12 @@ export const LinkList = class {
     preNode.next = current
     this.length = this.length - 1
     return true
+  }
+
+  clear() {
+    this.head = null
+    this.length = 0
+    return false
   }
 
   update(position, element = null) {
