@@ -2,7 +2,7 @@
  * @Description: 双向链表
  * @Date: 2021-06-07 18:58:08 +0800
  * @Author: JackChou
- * @LastEditTime: 2021-06-07 23:34:59 +0800
+ * @LastEditTime: 2021-06-08 00:01:21 +0800
  * @LastEditors: JackChou
  */
 class Node {
@@ -79,22 +79,32 @@ export class DoubleLinkList {
   }
 
   removeAt(position) {
-    if (typeof position !== 'number' || position < 0 || position > this.length) return false
+    if (typeof position !== 'number' || position < 0 || position >= this.length) return false
     if (position === 0) {
       this.head = this.head.next
+      this.length -= 1
+      return true
+    } else if (position > 0 && position === this.length - 1) {
+      // 释放末尾节点
+      this.tail.pre.next = null
+      // 尾指针指向前一个节点
+      this.tail = this.tail.pre
+      this.length -= 1
+      return true
+    } else {
+      let index = 0
+      let current = this.head
+      while (index < position) {
+        current = current.next
+        index += 1
+      }
+      const nextNode = current.next
+      current.pre.next = nextNode
+      // 释放内存
+      current = null
+      this.length -= 1
       return true
     }
-    let index = 0
-    let current = this.head
-    while (index < position) {
-      current = current.next
-      index += 1
-    }
-    const nextNode = current.next
-    current.pre.next = nextNode
-    // 释放内存
-    current = null
-    return true
   }
 
   clear() {
