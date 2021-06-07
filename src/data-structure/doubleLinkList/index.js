@@ -2,13 +2,13 @@
  * @Description: 双向链表
  * @Date: 2021-06-07 18:58:08 +0800
  * @Author: JackChou
- * @LastEditTime: 2021-06-08 00:05:22 +0800
+ * @LastEditTime: 2021-06-08 00:14:38 +0800
  * @LastEditors: JackChou
  */
 class Node {
-  constructor(data, pre, next = null) {
+  constructor(data) {
     this.data = data
-    this.pre = null
+    this.prev = null
     this.next = null
   }
 }
@@ -31,7 +31,7 @@ export class DoubleLinkList {
         current = current.next
       }
       current.next = node
-      node.pre = current
+      node.prev = current
     }
     this.tail = node
     this.length += 1
@@ -51,7 +51,7 @@ export class DoubleLinkList {
         // node 作为第一个节点 将其 next 指向原来的第一个节点
         node.next = this.head
         // 原来第一个节点的 pre 执行 node
-        this.head.pre = node
+        this.head.prev = node
         // node 作为第一个节点
         this.head = node
       } else if (position === this.length) {
@@ -66,7 +66,7 @@ export class DoubleLinkList {
           index += 1
         }
         node.next = current
-        current.pre.next = node
+        current.prev.next = node
       }
     }
     this.length += 1
@@ -87,9 +87,9 @@ export class DoubleLinkList {
       return true
     } else if (position > 0 && position === this.length - 1) {
       // 释放末尾节点
-      this.tail.pre.next = null
+      this.tail.prev.next = null
       // 尾指针指向前一个节点
-      this.tail = this.tail.pre
+      this.tail = this.tail.prev
       this.length -= 1
       return true
     } else {
@@ -100,7 +100,7 @@ export class DoubleLinkList {
         index += 1
       }
       const nextNode = current.next
-      current.pre.next = nextNode
+      current.prev.next = nextNode
       // 释放内存
       current = null
       this.length -= 1
@@ -128,7 +128,7 @@ export class DoubleLinkList {
       let current = this.tail
       let index = this.length - 1
       while (index > position) {
-        current = current.pre
+        current = current.prev
         index -= 1
       }
       current.data = element
@@ -152,7 +152,7 @@ export class DoubleLinkList {
       let current = this.tail
       let index = this.length - 1
       while (index > position) {
-        current = current.pre
+        current = current.prev
         index -= 1
       }
       data = current.data
@@ -229,7 +229,7 @@ export class DoubleLinkList {
     let current = this.tail
     while (current) {
       str += separator + JSON.stringify(current.data)
-      current = current.prev
+      current = current.prevv
     }
     return str === '' ? str : str.slice(1)
   }
