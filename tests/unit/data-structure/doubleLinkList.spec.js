@@ -2,7 +2,7 @@
  * @Description: 双向链表测试
  * @Date: 2021-06-07 19:23:49 +0800
  * @Author: JackChou
- * @LastEditTime: 2021-06-07 23:15:02 +0800
+ * @LastEditTime: 2021-06-07 23:32:29 +0800
  * @LastEditors: JackChou
  */
 import { DoubleLinkList } from '@ds/index.js'
@@ -64,8 +64,32 @@ describe('LinkList', () => {
     expect(linkList.remove(4)).toBe(false)
     console.log(linkList + '')
   })
-  it('update', () => {})
-  it('size', () => {})
+  it('update', () => {
+    console.log('update----')
+    linkList.clear()
+    linkList.append(0)
+    linkList.append('JackChou')
+    linkList.append(1)
+    linkList.append(2)
+    linkList.append('A')
+    linkList.append(0)
+    linkList.append('JackChou')
+    linkList.append(1)
+    linkList.append(2)
+    linkList.append('A')
+    console.log(linkList.length)
+    expect(linkList.update()).toBe(false)
+    expect(linkList.update(2, '二')).toBe(true)
+    console.log(linkList + '')
+    expect(linkList.update(4, '③')).toBe(true)
+    expect(linkList.update(5, '③')).toBe(true)
+    expect(linkList.update(6, 'love')).toBe(true)
+    console.log(linkList + '')
+    expect(linkList.update(8, 'love')).toBe(true)
+    console.log(linkList + '')
+    expect(linkList.update(9, 'u')).toBe(true)
+    console.log(linkList + '')
+  })
   it('get', () => {
     linkList.clear()
     expect(linkList.get('B')).toBe(null)

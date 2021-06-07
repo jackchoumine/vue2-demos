@@ -2,7 +2,7 @@
  * @Description: 双向链表
  * @Date: 2021-06-07 18:58:08 +0800
  * @Author: JackChou
- * @LastEditTime: 2021-06-07 23:13:35 +0800
+ * @LastEditTime: 2021-06-07 23:34:59 +0800
  * @LastEditors: JackChou
  */
 class Node {
@@ -103,17 +103,50 @@ export class DoubleLinkList {
   }
 
   // 改
-  update(position, element) {}
-  // 查
-  get(position = 0) {
-    if (typeof position !== 'number' || position < 0 || position >= this.length) return null
-    let index = 0
-    let current = this.head
-    while (index < position) {
-      current = current.next
-      index++
+  update(position, element) {
+    if (typeof position !== 'number' || position < 0 || position >= this.length) return false
+    if (position <= this.length / 2) {
+      let current = this.head
+      let index = 0
+      while (index < position) {
+        current = current.next
+        index += 1
+      }
+      current.data = element
+    } else {
+      let current = this.tail
+      let index = this.length - 1
+      while (index > position) {
+        current = current.pre
+        index -= 1
+      }
+      current.data = element
     }
-    return current.data
+    return true
+  }
+
+  // 查
+  get(position) {
+    if (typeof position !== 'number' || position < 0 || position >= this.length) return null
+    let data = null
+    if (position <= this.length / 2) {
+      let current = this.head
+      let index = 0
+      while (index < position) {
+        current = current.next
+        index += 1
+      }
+      data = current.data
+    } else {
+      let current = this.tail
+      let index = this.length - 1
+      while (index > position) {
+        current = current.pre
+        index -= 1
+      }
+      data = current.data
+    }
+    return data
   }
 
   indexOf(element) {
