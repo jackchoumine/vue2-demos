@@ -2,7 +2,7 @@
  * @Description: 双向链表测试
  * @Date: 2021-06-07 19:23:49 +0800
  * @Author: JackChou
- * @LastEditTime: 2021-06-08 00:05:52 +0800
+ * @LastEditTime: 2021-06-08 00:24:24 +0800
  * @LastEditors: JackChou
  */
 import { DoubleLinkList } from '@ds/index.js'
@@ -135,5 +135,13 @@ describe('LinkList', () => {
     linkList.append('A')
     expect(linkList.findAllIndex(5)).toEqual({ 5: false })
     expect(linkList.findAllIndex('A', '1')).toEqual({ 1: [3], A: [4, 5] })
+  })
+  it('getHead getTail', () => {
+    linkList.clear()
+    linkList.append('1')
+    linkList.append('A')
+    linkList.append('A')
+    expect(linkList.getHead()).toBe('1')
+    expect(linkList.getTail()).toEqual('A')
   })
 })

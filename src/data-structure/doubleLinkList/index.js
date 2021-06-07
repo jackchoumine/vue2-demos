@@ -2,7 +2,7 @@
  * @Description: 双向链表
  * @Date: 2021-06-07 18:58:08 +0800
  * @Author: JackChou
- * @LastEditTime: 2021-06-08 00:14:38 +0800
+ * @LastEditTime: 2021-06-08 00:21:53 +0800
  * @LastEditors: JackChou
  */
 class Node {
@@ -202,6 +202,14 @@ export class DoubleLinkList {
       }
     })
     return Object.keys(indexMap).length ? indexMap : -1
+  }
+
+  getHead() {
+    return this.head.data
+  }
+
+  getTail() {
+    return this.tail.data
   }
 
   /**
