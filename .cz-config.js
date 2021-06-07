@@ -2,7 +2,7 @@
  * @Description: git 提交信息配置
  * @Date: 2021-06-01 13:51:23 +0800
  * @Author: JackChou
- * @LastEditTime: 2021-06-01 14:57:45 +0800
+ * @LastEditTime: 2021-06-07 23:40:23 +0800
  * @LastEditors: JackChou
  */
 module.exports = {
@@ -11,13 +11,13 @@ module.exports = {
     { value: 'fix', name: 'fix:      修复' },
     { value: 'merge', name: 'merge:    合并分支' },
     { value: 'chore', name: 'chore:    构建过程或辅助工具的变动' },
+    { value: 'build', name: 'build:    打包' },
     { value: 'refactor', name: 'refactor: 重构(既不是增加feature，也不是修复bug)' },
+    { value: 'test', name: 'test:     增加测试' },
     { value: 'style', name: 'style:    代码格式(不影响代码运行的变动)' },
     { value: 'revert', name: 'revert:   回退' },
     { value: 'docs', name: 'docs:     文档变更' },
-    { value: 'build', name: 'build:    打包' },
     { value: 'perf', name: 'perf:     性能优化' },
-    { value: 'test', name: 'test:     增加测试' },
   ],
   // override the messages, defaults are as follows
   messages: {
