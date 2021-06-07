@@ -2,14 +2,14 @@
  * @Description: 双向链表测试
  * @Date: 2021-06-07 19:23:49 +0800
  * @Author: JackChou
- * @LastEditTime: 2021-06-07 23:32:29 +0800
+ * @LastEditTime: 2021-06-07 23:38:40 +0800
  * @LastEditors: JackChou
  */
 import { DoubleLinkList } from '@ds/index.js'
 describe('LinkList', () => {
   const linkList = new DoubleLinkList()
-  const jack = { name: 'JackChou' }
   it('append', () => {
+    const jack = { name: 'JackChou' }
     expect(linkList.append(jack)).toBe(true)
     expect(linkList + '').toBe(JSON.stringify(jack))
     expect(linkList.append('test')).toBe(true)
@@ -34,7 +34,6 @@ describe('LinkList', () => {
     expect(linkList.insert('A', 5)).toBe(true)
     expect(linkList.insert('B', 7)).toBe(false)
   })
-  it('insert', () => {})
   it('removeAt', () => {
     linkList.clear()
     linkList.append(0)
