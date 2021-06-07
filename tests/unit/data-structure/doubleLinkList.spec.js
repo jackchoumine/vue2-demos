@@ -2,7 +2,7 @@
  * @Description: 双向链表测试
  * @Date: 2021-06-07 19:23:49 +0800
  * @Author: JackChou
- * @LastEditTime: 2021-06-07 23:38:40 +0800
+ * @LastEditTime: 2021-06-07 23:59:02 +0800
  * @LastEditors: JackChou
  */
 import { DoubleLinkList } from '@ds/index.js'
@@ -36,19 +36,26 @@ describe('LinkList', () => {
   })
   it('removeAt', () => {
     linkList.clear()
+    console.log('removeAt-----')
     linkList.append(0)
     linkList.append(1)
     linkList.append(2)
     linkList.append('A')
+    linkList.append('B')
+    linkList.append('C')
+    console.log(linkList + '')
+    console.log(linkList.length)
+    expect(linkList.removeAt(6)).toBe(false)
+    expect(linkList.removeAt(5)).toBe(true)
+    console.log(linkList + '')
+    console.log(linkList.length)
+    expect(linkList.removeAt(6)).toBe(false)
     expect(linkList.removeAt(0)).toBe(true)
     console.log(linkList + '')
-    expect(linkList.removeAt(1)).toBe(true)
-    linkList.append('B')
-    linkList.append(2)
-    linkList.append('A')
+    console.log(linkList.length)
+    expect(linkList.removeAt(2)).toBe(true)
     console.log(linkList + '')
-    expect(linkList.removeAt(3)).toBe(true)
-    console.log(linkList + '')
+    console.log(linkList.length)
   })
   it('remove', () => {
     console.log('remove----')
