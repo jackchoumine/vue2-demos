@@ -2,7 +2,7 @@
  * @Description: 双向链表
  * @Date: 2021-06-07 18:58:08 +0800
  * @Author: JackChou
- * @LastEditTime: 2021-06-08 00:21:53 +0800
+ * @LastEditTime: 2021-06-08 00:26:16 +0800
  * @LastEditors: JackChou
  */
 class Node {
@@ -237,7 +237,7 @@ export class DoubleLinkList {
     let current = this.tail
     while (current) {
       str += separator + JSON.stringify(current.data)
-      current = current.prevv
+      current = current.prev
     }
     return str === '' ? str : str.slice(1)
   }
