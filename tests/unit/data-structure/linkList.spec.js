@@ -2,7 +2,7 @@
  * @Description: 链表测试
  * @Date: 2021-06-06 18:30:28 +0800
  * @Author: JackChou
- * @LastEditTime: 2021-06-06 22:34:28 +0800
+ * @LastEditTime: 2021-06-07 19:57:00 +0800
  * @LastEditors: JackChou
  */
 import { LinkList } from '@ds/index.js'
@@ -61,13 +61,13 @@ describe('LinkList', () => {
     linkList.append(2)
     linkList.append(3)
     linkList.append(4)
-    console.log(linkList + '')
+    // console.log(linkList + '')
     expect(linkList.remove(4)).toEqual(true)
     expect(linkList.remove(1)).toEqual(true)
     expect(linkList.remove(0)).toEqual(true)
     expect(linkList.append('JACK')).toEqual(true)
     expect(linkList.remove('JACK')).toEqual(true)
     expect(linkList.remove(2)).toEqual(true)
-    console.log(linkList + '')
+    // console.log(linkList + '')
   })
 })
