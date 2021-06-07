@@ -1,10 +1,8 @@
-import { jsxNamespacedName } from '../../../../../../Library/Caches/typescript/4.2/node_modules/@babel/types/lib/index'
-
 /*
  * @Description: 双向链表
  * @Date: 2021-06-07 18:58:08 +0800
  * @Author: JackChou
- * @LastEditTime: 2021-06-07 22:38:46 +0800
+ * @LastEditTime: 2021-06-07 23:13:35 +0800
  * @LastEditors: JackChou
  */
 class Node {
@@ -76,8 +74,29 @@ export class DoubleLinkList {
   }
 
   // 删除
-  remove(element) {}
-  removeAt(position) {}
+  remove(element) {
+    return this.removeAt(this.indexOf(element))
+  }
+
+  removeAt(position) {
+    if (typeof position !== 'number' || position < 0 || position > this.length) return false
+    if (position === 0) {
+      this.head = this.head.next
+      return true
+    }
+    let index = 0
+    let current = this.head
+    while (index < position) {
+      current = current.next
+      index += 1
+    }
+    const nextNode = current.next
+    current.pre.next = nextNode
+    // 释放内存
+    current = null
+    return true
+  }
+
   clear() {
     this.head = null
     this.length = 0
@@ -101,7 +120,7 @@ export class DoubleLinkList {
     let index = 0
     let current = this.head
     let find = false
-    while (current.next && !find) {
+    while (current && !find) {
       if (JSON.stringify(current.data) === JSON.stringify(element)) {
         find = true
         break
