@@ -2,7 +2,7 @@
  * @Description: 双向链表测试
  * @Date: 2021-06-07 19:23:49 +0800
  * @Author: JackChou
- * @LastEditTime: 2021-06-07 23:59:02 +0800
+ * @LastEditTime: 2021-06-08 00:05:52 +0800
  * @LastEditors: JackChou
  */
 import { DoubleLinkList } from '@ds/index.js'
@@ -37,6 +37,7 @@ describe('LinkList', () => {
   it('removeAt', () => {
     linkList.clear()
     console.log('removeAt-----')
+    expect(linkList.removeAt(6)).toBe(false)
     linkList.append(0)
     linkList.append(1)
     linkList.append(2)

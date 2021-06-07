@@ -2,7 +2,7 @@
  * @Description: 双向链表
  * @Date: 2021-06-07 18:58:08 +0800
  * @Author: JackChou
- * @LastEditTime: 2021-06-08 00:01:21 +0800
+ * @LastEditTime: 2021-06-08 00:05:22 +0800
  * @LastEditors: JackChou
  */
 class Node {
@@ -79,7 +79,8 @@ export class DoubleLinkList {
   }
 
   removeAt(position) {
-    if (typeof position !== 'number' || position < 0 || position >= this.length) return false
+    if (typeof position !== 'number' || position < 0 || position >= this.length || this.length === 0) return false
+
     if (position === 0) {
       this.head = this.head.next
       this.length -= 1
