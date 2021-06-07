@@ -2,7 +2,7 @@
  * @Description: 双向链表测试
  * @Date: 2021-06-07 19:23:49 +0800
  * @Author: JackChou
- * @LastEditTime: 2021-06-07 21:53:47 +0800
+ * @LastEditTime: 2021-06-07 22:38:07 +0800
  * @LastEditors: JackChou
  */
 import { DoubleLinkList } from '@ds/index.js'
@@ -49,5 +49,12 @@ describe('LinkList', () => {
     expect(linkList.get(3)).toBe('A')
     expect(linkList.get(5)).toBe('A')
   })
-  it('indexOf', () => {})
+  it('indexOf', () => {
+    expect(linkList.indexOf(5)).toBe(-1)
+    expect(linkList.indexOf('A')).toBe(3)
+  })
+  it('findAllIndex', () => {
+    expect(linkList.findAllIndex(5)).toEqual({ 5: false })
+    expect(linkList.findAllIndex('A', '1')).toEqual({ 1: [1], A: [3, 5] })
+  })
 })

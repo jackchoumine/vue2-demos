@@ -1,8 +1,10 @@
+import { jsxNamespacedName } from '../../../../../../Library/Caches/typescript/4.2/node_modules/@babel/types/lib/index'
+
 /*
  * @Description: 双向链表
  * @Date: 2021-06-07 18:58:08 +0800
  * @Author: JackChou
- * @LastEditTime: 2021-06-07 21:52:55 +0800
+ * @LastEditTime: 2021-06-07 22:38:46 +0800
  * @LastEditors: JackChou
  */
 class Node {
@@ -95,7 +97,50 @@ export class DoubleLinkList {
     return current.data
   }
 
-  indexOf(element) {}
+  indexOf(element) {
+    let index = 0
+    let current = this.head
+    let find = false
+    while (current.next && !find) {
+      if (JSON.stringify(current.data) === JSON.stringify(element)) {
+        find = true
+        break
+      }
+      current = current.next
+      index++
+    }
+    return find ? index : -1
+  }
+
+  findIndex(element) {
+    return this.indexOf(element)
+  }
+
+  findAllIndex(...elements) {
+    const indexMap = {}
+    let index = 0
+    let current = this.head
+    while (current) {
+      elements.forEach(ele => {
+        if (JSON.stringify(ele) === JSON.stringify(current.data)) {
+          !indexMap[ele] && (indexMap[ele] = new Set([index]))
+          indexMap[ele].size && indexMap[ele].add(index)
+        }
+      })
+      current = current.next
+      index++
+    }
+
+    elements.forEach(el => {
+      if (indexMap[el] && indexMap[el].size) {
+        indexMap[el] = [...indexMap[el]]
+      } else {
+        indexMap[el] = false
+      }
+    })
+    return Object.keys(indexMap).length ? indexMap : -1
+  }
+
   /**
    * 向前遍历
    */
