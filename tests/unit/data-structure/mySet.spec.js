@@ -2,7 +2,7 @@
  * @Description: 集合测试
  * @Date: 2021-06-08 00:32:35 +0800
  * @Author: JackChou
- * @LastEditTime: 2021-06-08 00:46:57 +0800
+ * @LastEditTime: 2021-06-08 00:48:32 +0800
  * @LastEditors: JackChou
  */
 import { MySet } from '@ds/index.js'
@@ -10,6 +10,7 @@ describe('Stack', () => {
   const mySet = new MySet()
   it('add', () => {
     expect(mySet.add('1')).toBe(true)
+    expect(mySet.add('1')).toBe(false)
   })
   it('add', () => {
     expect(mySet.has('1')).toBe(true)
