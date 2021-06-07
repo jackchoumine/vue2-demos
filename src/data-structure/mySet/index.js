@@ -2,7 +2,7 @@
  * @Description: 集合
  * @Date: 2021-06-08 00:30:27 +0800
  * @Author: JackChou
- * @LastEditTime: 2021-06-08 00:44:51 +0800
+ * @LastEditTime: 2021-06-08 00:56:04 +0800
  * @LastEditors: JackChou
  */
 export class MySet {
@@ -42,5 +42,13 @@ export class MySet {
 
   values() {
     return Object.values(this.obj)
+  }
+
+  toString(separator = ',') {
+    let str = ''
+    Object.keys(this.obj).forEach(key => {
+      str += separator + JSON.stringify(this.obj[key])
+    })
+    return str === '' ? str : str.slice(1)
   }
 }
