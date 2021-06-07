@@ -2,7 +2,7 @@
  * @Description: 双向链表测试
  * @Date: 2021-06-07 19:23:49 +0800
  * @Author: JackChou
- * @LastEditTime: 2021-06-07 21:42:38 +0800
+ * @LastEditTime: 2021-06-07 21:53:47 +0800
  * @LastEditors: JackChou
  */
 import { DoubleLinkList } from '@ds/index.js'
@@ -38,6 +38,16 @@ describe('LinkList', () => {
   it('remove', () => {})
   it('update', () => {})
   it('size', () => {})
-  it('get', () => {})
+  it('get', () => {
+    expect(linkList.get('B')).toBe(null)
+    expect(linkList.get('0')).toBe(null)
+    expect(linkList.get(6)).toBe(null)
+  })
+  it('get', () => {
+    console.log(linkList + '')
+    expect(linkList.get(0)).toBe('0')
+    expect(linkList.get(3)).toBe('A')
+    expect(linkList.get(5)).toBe('A')
+  })
   it('indexOf', () => {})
 })

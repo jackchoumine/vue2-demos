@@ -2,7 +2,7 @@
  * @Description: 双向链表
  * @Date: 2021-06-07 18:58:08 +0800
  * @Author: JackChou
- * @LastEditTime: 2021-06-07 21:38:46 +0800
+ * @LastEditTime: 2021-06-07 21:52:55 +0800
  * @LastEditors: JackChou
  */
 class Node {
@@ -84,7 +84,17 @@ export class DoubleLinkList {
   // 改
   update(position, element) {}
   // 查
-  get(position) {}
+  get(position = 0) {
+    if (typeof position !== 'number' || position < 0 || position >= this.length) return null
+    let index = 0
+    let current = this.head
+    while (index < position) {
+      current = current.next
+      index++
+    }
+    return current.data
+  }
+
   indexOf(element) {}
   /**
    * 向前遍历
