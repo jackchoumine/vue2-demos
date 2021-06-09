@@ -2,13 +2,14 @@
  * @Description: 导出学习例子
  * @Date: 2021-06-02 12:55:29 +0800
  * @Author: JackChou
- * @LastEditTime: 2021-06-03 20:05:47 +0800
+ * @LastEditTime: 2021-06-09 20:54:28 +0800
  * @LastEditors: JackChou
  */
 import dynamicComponent from './dynamic-component'
 import DebounceTest from './DebounceTest'
+import FormTableTest from './FormTableTest.vue'
 import confirm from './confirm'
-const components = [dynamicComponent, DebounceTest]
+const components = [dynamicComponent, DebounceTest, FormTableTest]
 
 const myComponents = {
   install(Vue) {

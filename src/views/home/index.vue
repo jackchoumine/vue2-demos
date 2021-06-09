@@ -3,7 +3,7 @@
  * @Hash: ''
  * @Date: 2021-06-01 14:30:02 +0800
  * @Author: JackChou
- * @LastEditTime: 2021-06-03 20:06:02 +0800
+ * @LastEditTime: 2021-06-09 20:53:56 +0800
  * @LastEditors: JackChou
 -->
 <template>
@@ -11,6 +11,7 @@
     <DynamicComponent />
     <el-button type="primary" @click="showConfirm">显示弹窗</el-button>
     <DebounceTest />
+    <FormTableTest />
   </div>
 </template>
 

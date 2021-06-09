@@ -3355,7 +3355,7 @@ clone-deep@^4.0.1:
     kind-of "^6.0.2"
     shallow-clone "^3.0.0"
 
-clone@2.x, clone@^2.1.1:
+clone@2.x, clone@^2.1.1, clone@^2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/clone/-/clone-2.1.2.tgz#1b7f4b9f591f1e8f83670401600345a02887435f"
   integrity sha1-G39Ln1kfHo+DZwQBYANFoCiHQ18=
@@ -6864,6 +6864,14 @@ istanbul-reports@^2.2.6:
   integrity sha1-XZOfYjfXtIOTzAlZ6rQM1P0FaTE=
   dependencies:
     html-escaper "^2.0.0"
+
+j-form-table@0.0.12:
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/j-form-table/-/j-form-table-0.0.12.tgz#351b02293733d4a253b4b77dd430e131a285581f"
+  integrity sha512-9Cq3xnxDg8ML1LjL9J4giLn0HAtyhA9mSVE+LtOuvoGicZedmELBiyTc7Qduo4C2Ylmh7Ivj0WH/JvWCdQShSQ==
+  dependencies:
+    clone "^2.1.2"
+    element-ui "^2.15.2"
 
 javascript-stringify@^2.0.1:
   version "2.1.0"
