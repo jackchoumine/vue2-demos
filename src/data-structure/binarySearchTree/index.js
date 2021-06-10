@@ -2,7 +2,7 @@
  * @Description: 二叉搜索树
  * @Date: 2021-06-10 22:28:36 +0800
  * @Author: JackChou
- * @LastEditTime: 2021-06-10 23:46:41 +0800
+ * @LastEditTime: 2021-06-11 00:19:26 +0800
  * @LastEditors: JackChou
  */
 
@@ -61,7 +61,22 @@ export class BinarySearchTree {
   /**
    *中序遍历
    */
-  inOrderTraverse() {}
+  inOrderTraverse(callback) {
+    this.midOrderTraverseNode(this.root, callback)
+  }
+
+  midOrderTraverseNode(node, callback) {
+    if (!node) return null
+    else {
+      // 左子树
+      this.midOrderTraverseNode(node.left, callback)
+      // 处理节点
+      callback(node.data)
+      // 在处理右子树
+      this.midOrderTraverseNode(node.right, callback)
+    }
+  }
+
   /**
    * 先序遍历 根---> 左子树 ---> 右子树
    */
@@ -85,7 +100,22 @@ export class BinarySearchTree {
   /**
    * 后序遍历
    */
-  postOrderTraverse() {}
+  postOrderTraverse(callback) {
+    this.postOrderTraverseNode(this.root, callback)
+  }
+
+  postOrderTraverseNode(node, callback) {
+    if (!node) return null
+    else {
+      // 遍历左子树
+      this.postOrderTraverseNode(node.left, callback)
+      // 遍历右子树
+      this.postOrderTraverseNode(node.right, callback)
+      // 处理节点
+      callback(node.data)
+    }
+  }
+
   min() {}
   max() {}
 }

@@ -2,7 +2,7 @@
  * @Description: 二叉搜索树测试
  * @Date: 2021-06-10 22:35:38 +0800
  * @Author: JackChou
- * @LastEditTime: 2021-06-10 23:44:08 +0800
+ * @LastEditTime: 2021-06-10 23:58:36 +0800
  * @LastEditors: JackChou
  */
 import { BinarySearchTree } from '@ds/index.js'
@@ -31,6 +31,22 @@ describe('BinarySearchTree', () => {
       str += value + ','
     }
     expect(binarySearchTree.preOrderTraverse(callback)).toBe()
+    console.log(str)
+  })
+  it('inOrderTraverse', () => {
+    let str = ''
+    const callback = value => {
+      str += value + ','
+    }
+    expect(binarySearchTree.inOrderTraverse(callback)).toBe()
+    console.log(str)
+  })
+  it('postOrderTraverse', () => {
+    let str = ''
+    const callback = value => {
+      str += value + ','
+    }
+    expect(binarySearchTree.postOrderTraverse(callback)).toBe()
     console.log(str)
   })
 })
