@@ -2,9 +2,10 @@
  * @Description: 哈希表
  * @Date: 2021-06-08 21:58:57 +0800
  * @Author: JackChou
- * @LastEditTime: 2021-06-10 19:31:17 +0800
+ * @LastEditTime: 2021-06-10 20:42:20 +0800
  * @LastEditors: JackChou
  */
+
 /**
  数组问题：
  1. 插入成本高
@@ -32,13 +33,37 @@ export function hashFunction(str = '', size) {
   })
   return hashCode % size
 }
+
+function isPrime(number) {
+  if (number === 0) return false
+  if ([1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 47].includes(number)) return true
+  let isPrimeNumber = true
+  let i = 2
+  while (i <= Math.floor(Math.sqrt(number))) {
+    if (number % i === 0) {
+      isPrimeNumber = false
+      break
+    }
+    i++
+  }
+  return isPrimeNumber
+}
+function getFirstPrimeFrom(number) {
+  let start = number
+  while (start) {
+    if (isPrime(start)) break
+    start++
+  }
+  return start
+}
 export class HashTable {
   constructor() {
     this.storage = []
     // 哈希表的元素个数
     this.count = 0
     // loadFactor>=0.75, 对数组进行扩容
-    // loadFactor < 0.25 缩容
+    // loadFactor <= 0.25 缩容
+    // 质数保证元素分布均匀
     this.limit = 7
   }
 
@@ -54,7 +79,6 @@ export class HashTable {
     const _bucket = this.storage[index]
     if (!_bucket) {
       // 使用链地址发解决冲突
-      // bucket = []
       this.storage[index] = []
     }
     const bucket = this.storage[index]
@@ -75,6 +99,31 @@ export class HashTable {
     bucket.push([key, value])
     // 元素加一
     this.count += 1
+    // 扩容
+    if (this.count >= this.limit * 0.75) {
+      this.resize(getFirstPrimeFrom(this.limit * 2))
+    }
+    return true
+  }
+
+  resize(newLimit) {
+    let oldStorage = this.storage
+    this.clear()
+    this.limit = newLimit
+
+    let index = 0
+    while (index < oldStorage.length) {
+      const bucket = oldStorage[index]
+      if (!bucket) continue
+      let i = 0
+      while (i < bucket.length) {
+        const item = bucket[i]
+        this.put(item[0], item[1])
+        i += 1
+      }
+      index += 1
+    }
+    oldStorage = null
     return true
   }
 
@@ -98,6 +147,10 @@ export class HashTable {
       i += 1
     }
     if (removed) this.count -= 1
+    // 缩容 保证最小容量为 7
+    if (this.limit > 7 && this.count <= this.limit * 0.25) {
+      this.resize(getFirstPrimeFrom(Number.parseInt(this.limit * 0.5)))
+    }
     return removed
   }
 
