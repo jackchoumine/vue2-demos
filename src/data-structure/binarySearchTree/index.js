@@ -2,7 +2,7 @@
  * @Description: 二叉搜索树
  * @Date: 2021-06-10 22:28:36 +0800
  * @Author: JackChou
- * @LastEditTime: 2021-06-11 00:19:26 +0800
+ * @LastEditTime: 2021-06-11 00:33:16 +0800
  * @LastEditors: JackChou
  */
 
@@ -116,6 +116,19 @@ export class BinarySearchTree {
     }
   }
 
-  min() {}
-  max() {}
+  min() {
+    let node = this.root
+    while (node.left) {
+      node = node.left
+    }
+    return node?.data ?? null
+  }
+
+  max() {
+    let node = this.root
+    while (node.right) {
+      node = node.right
+    }
+    return node?.data ?? null
+  }
 }
