@@ -2,10 +2,9 @@
  * @Description: 二叉搜索树
  * @Date: 2021-06-10 22:28:36 +0800
  * @Author: JackChou
- * @LastEditTime: 2021-06-11 00:33:16 +0800
+ * @LastEditTime: 2021-06-11 00:41:12 +0800
  * @LastEditors: JackChou
  */
-
 class Node {
   constructor(data) {
     this.data = data
@@ -57,7 +56,23 @@ export class BinarySearchTree {
   }
 
   update(value) {}
-  search(value) {}
+  search(value) {
+    let node = this.root
+    let find = false
+    while (node) {
+      if (node.data < value) {
+        node = node.right
+      } else if (node.data > value) {
+        node = node.left
+      } else {
+        // 相等找到
+        find = true
+        break
+      }
+    }
+    return find
+  }
+
   /**
    *中序遍历
    */
