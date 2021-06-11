@@ -2,7 +2,7 @@
  * @Description: 二叉搜索树
  * @Date: 2021-06-10 22:28:36 +0800
  * @Author: JackChou
- * @LastEditTime: 2021-06-12 00:41:46 +0800
+ * @LastEditTime: 2021-06-12 00:47:28 +0800
  * @LastEditors: JackChou
  */
 class Node {
@@ -143,8 +143,10 @@ export class BinarySearchTree {
     return true
   }
 
-  update(value) {
-    if (this.remove(value)) {
+  update(oldValue, value) {
+    if (this.remove(oldValue)) {
+      this.insert(value)
+      return true
     } else {
       return false
     }
