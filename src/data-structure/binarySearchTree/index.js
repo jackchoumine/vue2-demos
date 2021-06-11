@@ -2,7 +2,7 @@
  * @Description: 二叉搜索树
  * @Date: 2021-06-10 22:28:36 +0800
  * @Author: JackChou
- * @LastEditTime: 2021-06-11 00:41:12 +0800
+ * @LastEditTime: 2021-06-12 00:41:46 +0800
  * @LastEditors: JackChou
  */
 class Node {
@@ -48,14 +48,108 @@ export class BinarySearchTree {
     }
   }
 
-  remove(value) {}
+  /**
+   * 三种情况：
+   * 1. 删除叶子节点即没有子节点
+   * 2. 该节点有一个子节点
+   * 3. 该节点有两个子节点
+   * @param {any} value 需要删除的节点
+   */
+  remove(value) {
+    let current = this.root
+    let parent = null
+    let isLeftChild = true
+    while (current.data !== value) {
+      parent = current
+      if (value < current.data) {
+        isLeftChild = true
+        current = current.left
+      } else {
+        isLeftChild = false
+        current = current.right
+      }
+      // 没有找到需要删除的节点
+      if (current === null) return false
+    }
+    if (current.left === null && current.right === null) {
+      // 删除的节点是叶子节点
+      if (current === this.root) {
+        // 删除根节点
+        this.root = null
+      } else if (isLeftChild) {
+        parent.left = null
+      } else {
+        parent.right = null
+      }
+    } else if (current.left && current.right === null) {
+      // 存在左节点
+      if (parent === this.root) {
+        // 删除的是根节点
+        this.root = current.left
+      } else if (isLeftChild) {
+        parent.left = current.left
+      } else {
+        parent.right = current.left
+      }
+    } else if (current.right && current.left === null) {
+      // 存在右节点
+      if (parent === this.root) {
+        // NOTE  删除的是根节点 容易漏掉
+        this.root = current.right
+      } else if (isLeftChild) {
+        parent.left = current.right
+      } else {
+        parent.right = current.right
+      }
+    } else {
+      if (isLeftChild) {
+        // 删除的节点在左子树，操作该节点的左子树
+        let leftMaxNode = current.left
+        while (leftMaxNode.right) {
+          leftMaxNode = leftMaxNode.right
+        }
+        parent.left = leftMaxNode
+        leftMaxNode.right = current.right
+      } else {
+        // 删除的节点在右子树，操作该节点的右子树
+        let rightMinNode = current.right
+        let rightMinNodeParent = current
+        while (rightMinNode.left) {
+          rightMinNodeParent = rightMinNode
+          rightMinNode = rightMinNode.left
+        }
+        parent.right = rightMinNode
+        rightMinNodeParent.left = rightMinNode.right
+        if (current !== rightMinNodeParent) {
+          rightMinNode.right = current.right
+        }
+        rightMinNode.left = current.left
+      }
+      current = null
+      /*
+               11
+         7             15
+       5    9       13        20
+     3    8  10  12  14   18     25
+                            19
+       */
+      // 中序遍历 11 7 5 3  9 8 10 15 13 12 14 20 18 19 25
+    }
+    return true
+  }
 
   clear() {
     this.root = null
     return true
   }
 
-  update(value) {}
+  update(value) {
+    if (this.remove(value)) {
+    } else {
+      return false
+    }
+  }
+
   search(value) {
     let node = this.root
     let find = false

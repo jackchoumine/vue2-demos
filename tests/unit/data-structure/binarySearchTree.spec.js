@@ -2,7 +2,7 @@
  * @Description: 二叉搜索树测试
  * @Date: 2021-06-10 22:35:38 +0800
  * @Author: JackChou
- * @LastEditTime: 2021-06-11 00:40:26 +0800
+ * @LastEditTime: 2021-06-12 00:38:46 +0800
  * @LastEditors: JackChou
  */
 import { BinarySearchTree } from '@ds/index.js'
@@ -59,9 +59,44 @@ describe('BinarySearchTree', () => {
     binarySearchTree.insert(100)
     expect(binarySearchTree.max()).toBe(100)
   })
-  it('find', () => {
+  it('search', () => {
     expect(binarySearchTree.search(4)).toBe(false)
     expect(binarySearchTree.search(40)).toBe(false)
     expect(binarySearchTree.search(10)).toBe(true)
+  })
+  it('remove', () => {
+    binarySearchTree.clear()
+    binarySearchTree.insert(11)
+    binarySearchTree.insert(7)
+    binarySearchTree.insert(15)
+    binarySearchTree.insert(5)
+    binarySearchTree.insert(9)
+    binarySearchTree.insert(13)
+    binarySearchTree.insert(20)
+    binarySearchTree.insert(3)
+    binarySearchTree.insert(8)
+    binarySearchTree.insert(10)
+    binarySearchTree.insert(12)
+    binarySearchTree.insert(14)
+    binarySearchTree.insert(18)
+    binarySearchTree.insert(25)
+    binarySearchTree.insert(19)
+    expect(binarySearchTree.search(4)).toBe(false)
+    let str = ''
+    const callback = value => {
+      str += value + ','
+    }
+    expect(binarySearchTree.inOrderTraverse(callback)).toBe()
+    console.log(str)
+    expect(binarySearchTree.remove(9)).toBe(true)
+    expect(binarySearchTree.remove(15)).toBe(true)
+    expect(binarySearchTree.remove(13)).toBe(true)
+    expect(binarySearchTree.remove(7)).toBe(true)
+    let str2 = ''
+    const callback2 = value => {
+      str2 += value + ','
+    }
+    expect(binarySearchTree.inOrderTraverse(callback2)).toBe()
+    console.log(str2)
   })
 })
