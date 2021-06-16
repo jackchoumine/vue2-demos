@@ -16,5 +16,10 @@
     "mixins",
     "prettierconfig",
     "prettierignore"
-  ]
+  ],
+  "files.associations": {
+    "*.vue": "vue",
+    "*.html": "html",
+    "ostream": "cpp"
+  }
 }
